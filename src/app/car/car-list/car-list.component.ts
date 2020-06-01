@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Car } from '../car.model';
 
 @Component({
@@ -18,6 +18,8 @@ export class CarListComponent implements OnInit {
     new Car('Mazda', '3', 'Turismo Segmento C', 'https://es.cdn.mazda.media/b0a8ea20b7c9486a909d475cc4969a15/add99ce2c03340889c65786c5656cd54.png?4a2205', 23500),
     new Car('Mazda', '2', 'Turismo Descapotable', 'https://es.cdn.mazda.media/0a2bec3b9d9448eda3ff8f45882a0972/908534686bae40ac867ec3e19b14f2ad.png?49430e', 28025)
   ];
+
+  @Input() searchText: string = '';
 
   constructor() { }
 

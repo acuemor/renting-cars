@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row new-button">
   <div class="col-xs-12">
     <button class="btn btn-success">New car</button>
   </div>
@@ -6,26 +6,17 @@
 <br />
 <div class="row">
   <div class="col-xs-12">
-    <a href="#" class="list-group-item clearfix" *ngFor="let car of cars">
-      <!-- <div class="row">
-        <div class="col-xs-1">
-          <h3 class="list-group-item-heading center justify-content align-center">{{car.brand}}</h3>
-        </div>
-        <div class="col-xs-1">
-          <h4 class="list-group-item-heading">{{car.model}}</h4>
-        </div>
-        <div class="col-xs-1">
-          <p class="list-group-item-text">{{car.price}} €</p>
-        </div>
-        <div class="col-xs-7">
-          <p class="list-group-item-text">{{car.description}}</p>
-        </div>
-        <div class="col-xs-2">
-          <img [src]="car.imgPath" alt="{{car.model}}" class="img-responsive" style="max-height: 50px;" />
-        </div>
-      </div> -->
-      <app-car-item [car]="car"></app-car-item>
-    </a>
+    <div *ngFor="let car of cars | filter: searchText">
+      <div *ngIf="car === -1">
+        <p class="empty-list">Not available cars</p>
+      </div>
+      <div *ngIf="car !== -1">
+        <a href="#" class="list-group-item clearfix">
+          <app-car-item [car]="car"></app-car-item>
+        </a>
+        <br />
+      </div>
+    </div>
   </div>
 </div>
 

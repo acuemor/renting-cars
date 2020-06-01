@@ -1,4 +1,11 @@
 <h1>Renting Cars</h1>
-<p>Barra búsqueda</p>
-<app-car-list></app-car-list>
+
+<div class="search-box">
+  <div class="form-group has-feedback has-search">
+    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+    <input type="text" class="form-control" placeholder="Search by brand or model" [(ngModel)]="searchText">
+  </div>
+</div>
+
+<app-car-list [searchText]=searchText></app-car-list>
 <p>Paginación</p>

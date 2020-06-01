@@ -7,6 +7,8 @@ import { CarComponent } from './car/car.component';
 import { CarListComponent } from './car/car-list/car-list.component';
 import { CarDetailComponent } from './car/car-detail/car-detail.component';
 import { CarItemComponent } from './car/car-item/car-item.component';
+import { FilterPipe } from './filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { CarItemComponent } from './car/car-item/car-item.component';
     CarComponent,
     CarListComponent,
     CarDetailComponent,
-    CarItemComponent
+    CarItemComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
